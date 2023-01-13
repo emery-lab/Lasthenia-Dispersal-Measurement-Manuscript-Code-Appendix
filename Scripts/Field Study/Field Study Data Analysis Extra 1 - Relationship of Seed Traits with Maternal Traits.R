@@ -198,5 +198,105 @@ relihsvh.msvl.cal.lm <- lm(rel_inflor_height_to_surveg_height ~ mean_inflor_heig
 summary(relihsvh.msvl.cal.lm)
 
 # -------------------
-# Do **larger** plants grow in taller/denser vegetation? -----
+# Do larger plants grow in taller vegetation? -----
+
+# Scatterplots -----
+
+ggplot(modsel_cal_plantlvl, aes(x = tot_mat_length_cm, y = mean_surveg_length_cm)) +
+        geom_point() + 
+        geom_smooth(method = "lm")
+
+# Modeling -----
+
+# Using mean surrounding vegetation length as the predictor
+tml.msvl.cal.lm <- lm(tot_mat_length_cm ~ mean_surveg_length_cm, data = modsel_cal_plantlvl)
+
+summary(tml.msvl.cal.lm)
+
+### ------------------
+### Modeling: L. glaberrima -----
+
+## -------------------
+## Do larger plants produce more inflorescences? -----
+
+# Scatterplots -----
+
+ggplot(modsel_gla_plantlvl, aes(y = tot_mat_length_cm, x = n_inflor)) +
+        geom_point() + 
+        geom_smooth(method = "lm")
+
+# Modeling -----
+
+inflor.totlen.gla.lm <- lm(n_inflor ~ tot_mat_length_cm, data = modsel_gla_plantlvl)
+
+summary(inflor.totlen.gla.lm)
+
+## -------------------
+## Do larger plants produce heavier seeds? -----
+
+# Scatterplots -----
+
+ggplot(joined_data_filtered_gla, aes(x = mean_seed_mass, y = total_branch_length)) + 
+        geom_point() + 
+        geom_smooth(method = "lm")
+
+# Modeling -----
+
+seedmass.totlen.gla.lm <- lm(mean_seed_mass ~ total_branch_length, data = joined_data_filtered_gla)
+
+summary(seedmass.totlen.gla.lm)
+
+
+## -------------------
+## Do taller plants grow in taller vegetation? -----
+
+# Scatterplot -----
+
+# raw heights of both focal plants and surrounding vegetation length 
+ggplot(modsel_gla_plantlvl, aes(x = mean_inflor_height_cm, y = mean_surveg_length_cm)) + 
+        geom_point() +
+        geom_smooth(method = "lm")
+
+# Relative height of focal plant relative to inflorenscence height 
+ggplot(modsel_gla_plantlvl, aes(y = rel_inflor_height_to_surveg_height, x = mean_inflor_height_cm)) + 
+        geom_point() + 
+        geom_smooth(method= "lm")
+
+
+# Modeling -----
+
+# taller plants tend to occur in taller vegetation (absolute measurements)
+mih.msvl.gla.lm <- lm(mean_inflor_height_cm ~ mean_surveg_length_cm, data = modsel_gla_plantlvl)
+
+summary(mih.msvl.gla.lm)
+
+# shorter plants (absolute height) tend to grow in relatively taller surrounding vegetation
+relihsvh.msvl.gla.lm <- lm(rel_inflor_height_to_surveg_height ~ mean_inflor_height_cm, data = modsel_gla_plantlvl)
+
+summary(relihsvh.msvl.gla.lm)
+
+
+
+## -------------------
+## Do larger plants grow in taller vegetation? -----
+
+# Scatterplots -----
+
+ggplot(modsel_gla_plantlvl, aes(x = tot_mat_length_cm, y = mean_surveg_length_cm)) +
+        geom_point() + 
+        geom_smooth(method = "lm")
+
+ggplot(modsel_gla_plantlvl, aes(x = tot_mat_length_cm, y = surveg_mass_g)) +
+        geom_point() + 
+        geom_smooth(method = "lm")
+
+
+# Modeling -----
+
+# Using mean surrounding vegetation length as the predictor
+tml.msvl.gla.lm <- lm(tot_mat_length_cm ~ mean_surveg_length_cm, data = modsel_gla_plantlvl)
+
+summary(tml.msvl.gla.lm)
+
+
 
