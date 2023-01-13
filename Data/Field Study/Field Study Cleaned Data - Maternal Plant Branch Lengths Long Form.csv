@@ -1,0 +1,435 @@
+Full ID,Measurement type,Length
+AcalT1M2,Main Stem Length (mm),130.827
+AcalT1M2,Branch 1 Length,NA
+AcalT1M2,Branch 2 Length,NA
+AcalT1M2,Branch 3 Length,NA
+AcalT1M2,Branch 4 Length,NA
+AcalT1M2,Branch 5 Length,NA
+AcalT1M2,Branch 6 Length,NA
+AcalT2M2,Main Stem Length (mm),137.741
+AcalT2M2,Branch 1 Length,NA
+AcalT2M2,Branch 2 Length,NA
+AcalT2M2,Branch 3 Length,NA
+AcalT2M2,Branch 4 Length,NA
+AcalT2M2,Branch 5 Length,NA
+AcalT2M2,Branch 6 Length,NA
+AfreT2M1,Main Stem Length (mm),197.031
+AfreT2M1,Branch 1 Length,NA
+AfreT2M1,Branch 2 Length,NA
+AfreT2M1,Branch 3 Length,NA
+AfreT2M1,Branch 4 Length,NA
+AfreT2M1,Branch 5 Length,NA
+AfreT2M1,Branch 6 Length,NA
+AglaT1M3,Main Stem Length (mm),356.495
+AglaT1M3,Branch 1 Length,78.247
+AglaT1M3,Branch 2 Length,17.206
+AglaT1M3,Branch 3 Length,NA
+AglaT1M3,Branch 4 Length,NA
+AglaT1M3,Branch 5 Length,NA
+AglaT1M3,Branch 6 Length,NA
+BcalT2M2,Main Stem Length (mm),222.984
+BcalT2M2,Branch 1 Length,NA
+BcalT2M2,Branch 2 Length,NA
+BcalT2M2,Branch 3 Length,NA
+BcalT2M2,Branch 4 Length,NA
+BcalT2M2,Branch 5 Length,NA
+BcalT2M2,Branch 6 Length,NA
+BfreT1M2,Main Stem Length (mm),161.952
+BfreT1M2,Branch 1 Length,NA
+BfreT1M2,Branch 2 Length,NA
+BfreT1M2,Branch 3 Length,NA
+BfreT1M2,Branch 4 Length,NA
+BfreT1M2,Branch 5 Length,NA
+BfreT1M2,Branch 6 Length,NA
+BglaT2M2,Main Stem Length (mm),240.798
+BglaT2M2,Branch 1 Length,107.97
+BglaT2M2,Branch 2 Length,NA
+BglaT2M2,Branch 3 Length,NA
+BglaT2M2,Branch 4 Length,NA
+BglaT2M2,Branch 5 Length,NA
+BglaT2M2,Branch 6 Length,NA
+BglaT2M3,Main Stem Length (mm),204.26
+BglaT2M3,Branch 1 Length,119.209
+BglaT2M3,Branch 2 Length,NA
+BglaT2M3,Branch 3 Length,NA
+BglaT2M3,Branch 4 Length,NA
+BglaT2M3,Branch 5 Length,NA
+BglaT2M3,Branch 6 Length,NA
+CcalT1M2,Main Stem Length (mm),171.886
+CcalT1M2,Branch 1 Length,62.38
+CcalT1M2,Branch 2 Length,59.837
+CcalT1M2,Branch 3 Length,NA
+CcalT1M2,Branch 4 Length,NA
+CcalT1M2,Branch 5 Length,NA
+CcalT1M2,Branch 6 Length,NA
+CcalT1M3,Main Stem Length (mm),181.296
+CcalT1M3,Branch 1 Length,NA
+CcalT1M3,Branch 2 Length,NA
+CcalT1M3,Branch 3 Length,NA
+CcalT1M3,Branch 4 Length,NA
+CcalT1M3,Branch 5 Length,NA
+CcalT1M3,Branch 6 Length,NA
+CcalT2M1,Main Stem Length (mm),149.912
+CcalT2M1,Branch 1 Length,NA
+CcalT2M1,Branch 2 Length,NA
+CcalT2M1,Branch 3 Length,NA
+CcalT2M1,Branch 4 Length,NA
+CcalT2M1,Branch 5 Length,NA
+CcalT2M1,Branch 6 Length,NA
+CfreT1M1,Main Stem Length (mm),164.71
+CfreT1M1,Branch 1 Length,NA
+CfreT1M1,Branch 2 Length,NA
+CfreT1M1,Branch 3 Length,NA
+CfreT1M1,Branch 4 Length,NA
+CfreT1M1,Branch 5 Length,NA
+CfreT1M1,Branch 6 Length,NA
+CfreT2M2,Main Stem Length (mm),146.046
+CfreT2M2,Branch 1 Length,NA
+CfreT2M2,Branch 2 Length,NA
+CfreT2M2,Branch 3 Length,NA
+CfreT2M2,Branch 4 Length,NA
+CfreT2M2,Branch 5 Length,NA
+CfreT2M2,Branch 6 Length,NA
+CfreT2M3,Main Stem Length (mm),144.032
+CfreT2M3,Branch 1 Length,70.438
+CfreT2M3,Branch 2 Length,84.796
+CfreT2M3,Branch 3 Length,139.798
+CfreT2M3,Branch 4 Length,NA
+CfreT2M3,Branch 5 Length,NA
+CfreT2M3,Branch 6 Length,NA
+CglaT1M1,Main Stem Length (mm),241.114
+CglaT1M1,Branch 1 Length,NA
+CglaT1M1,Branch 2 Length,NA
+CglaT1M1,Branch 3 Length,NA
+CglaT1M1,Branch 4 Length,NA
+CglaT1M1,Branch 5 Length,NA
+CglaT1M1,Branch 6 Length,NA
+CglaT1M2,Main Stem Length (mm),192.41
+CglaT1M2,Branch 1 Length,NA
+CglaT1M2,Branch 2 Length,NA
+CglaT1M2,Branch 3 Length,NA
+CglaT1M2,Branch 4 Length,NA
+CglaT1M2,Branch 5 Length,NA
+CglaT1M2,Branch 6 Length,NA
+CglaT2M2,Main Stem Length (mm),225.502
+CglaT2M2,Branch 1 Length,12.125
+CglaT2M2,Branch 2 Length,NA
+CglaT2M2,Branch 3 Length,NA
+CglaT2M2,Branch 4 Length,NA
+CglaT2M2,Branch 5 Length,NA
+CglaT2M2,Branch 6 Length,NA
+DcalT1M2,Main Stem Length (mm),106.834
+DcalT1M2,Branch 1 Length,NA
+DcalT1M2,Branch 2 Length,NA
+DcalT1M2,Branch 3 Length,NA
+DcalT1M2,Branch 4 Length,NA
+DcalT1M2,Branch 5 Length,NA
+DcalT1M2,Branch 6 Length,NA
+DcalT2M1,Main Stem Length (mm),161.266
+DcalT2M1,Branch 1 Length,44.478
+DcalT2M1,Branch 2 Length,NA
+DcalT2M1,Branch 3 Length,NA
+DcalT2M1,Branch 4 Length,NA
+DcalT2M1,Branch 5 Length,NA
+DcalT2M1,Branch 6 Length,NA
+DcalT2M2,Main Stem Length (mm),150.166
+DcalT2M2,Branch 1 Length,NA
+DcalT2M2,Branch 2 Length,NA
+DcalT2M2,Branch 3 Length,NA
+DcalT2M2,Branch 4 Length,NA
+DcalT2M2,Branch 5 Length,NA
+DcalT2M2,Branch 6 Length,NA
+DcalT2M3,Main Stem Length (mm),113.884
+DcalT2M3,Branch 1 Length,NA
+DcalT2M3,Branch 2 Length,NA
+DcalT2M3,Branch 3 Length,NA
+DcalT2M3,Branch 4 Length,NA
+DcalT2M3,Branch 5 Length,NA
+DcalT2M3,Branch 6 Length,NA
+DfreT1M1,Main Stem Length (mm),147.534
+DfreT1M1,Branch 1 Length,NA
+DfreT1M1,Branch 2 Length,NA
+DfreT1M1,Branch 3 Length,NA
+DfreT1M1,Branch 4 Length,NA
+DfreT1M1,Branch 5 Length,NA
+DfreT1M1,Branch 6 Length,NA
+DfreT1M2,Main Stem Length (mm),190.627
+DfreT1M2,Branch 1 Length,NA
+DfreT1M2,Branch 2 Length,NA
+DfreT1M2,Branch 3 Length,NA
+DfreT1M2,Branch 4 Length,NA
+DfreT1M2,Branch 5 Length,NA
+DfreT1M2,Branch 6 Length,NA
+DglaT1M2,Main Stem Length (mm),235.78
+DglaT1M2,Branch 1 Length,146.406
+DglaT1M2,Branch 2 Length,158.127
+DglaT1M2,Branch 3 Length,118.505
+DglaT1M2,Branch 4 Length,96.765
+DglaT1M2,Branch 5 Length,42.298
+DglaT1M2,Branch 6 Length,29.553
+DglaT2M2,Main Stem Length (mm),271.338
+DglaT2M2,Branch 1 Length,74.021
+DglaT2M2,Branch 2 Length,NA
+DglaT2M2,Branch 3 Length,NA
+DglaT2M2,Branch 4 Length,NA
+DglaT2M2,Branch 5 Length,NA
+DglaT2M2,Branch 6 Length,NA
+EcalT1M1,Main Stem Length (mm),154.871
+EcalT1M1,Branch 1 Length,NA
+EcalT1M1,Branch 2 Length,NA
+EcalT1M1,Branch 3 Length,NA
+EcalT1M1,Branch 4 Length,NA
+EcalT1M1,Branch 5 Length,NA
+EcalT1M1,Branch 6 Length,NA
+EcalT1M2,Main Stem Length (mm),109.079
+EcalT1M2,Branch 1 Length,NA
+EcalT1M2,Branch 2 Length,NA
+EcalT1M2,Branch 3 Length,NA
+EcalT1M2,Branch 4 Length,NA
+EcalT1M2,Branch 5 Length,NA
+EcalT1M2,Branch 6 Length,NA
+EcalT2M1,Main Stem Length (mm),107.429
+EcalT2M1,Branch 1 Length,NA
+EcalT2M1,Branch 2 Length,NA
+EcalT2M1,Branch 3 Length,NA
+EcalT2M1,Branch 4 Length,NA
+EcalT2M1,Branch 5 Length,NA
+EcalT2M1,Branch 6 Length,NA
+EcalT2M3,Main Stem Length (mm),99.348
+EcalT2M3,Branch 1 Length,NA
+EcalT2M3,Branch 2 Length,NA
+EcalT2M3,Branch 3 Length,NA
+EcalT2M3,Branch 4 Length,NA
+EcalT2M3,Branch 5 Length,NA
+EcalT2M3,Branch 6 Length,NA
+EfreT1M2,Main Stem Length (mm),141.059
+EfreT1M2,Branch 1 Length,NA
+EfreT1M2,Branch 2 Length,NA
+EfreT1M2,Branch 3 Length,NA
+EfreT1M2,Branch 4 Length,NA
+EfreT1M2,Branch 5 Length,NA
+EfreT1M2,Branch 6 Length,NA
+EfreT1M3,Main Stem Length (mm),208.332
+EfreT1M3,Branch 1 Length,NA
+EfreT1M3,Branch 2 Length,NA
+EfreT1M3,Branch 3 Length,NA
+EfreT1M3,Branch 4 Length,NA
+EfreT1M3,Branch 5 Length,NA
+EfreT1M3,Branch 6 Length,NA
+EglaT1M1,Main Stem Length (mm),236.533
+EglaT1M1,Branch 1 Length,114.407
+EglaT1M1,Branch 2 Length,79.548
+EglaT1M1,Branch 3 Length,60.463
+EglaT1M1,Branch 4 Length,NA
+EglaT1M1,Branch 5 Length,NA
+EglaT1M1,Branch 6 Length,NA
+EglaT2M3,Main Stem Length (mm),185.409
+EglaT2M3,Branch 1 Length,34.449
+EglaT2M3,Branch 2 Length,NA
+EglaT2M3,Branch 3 Length,NA
+EglaT2M3,Branch 4 Length,NA
+EglaT2M3,Branch 5 Length,NA
+EglaT2M3,Branch 6 Length,NA
+FcalT1M1,Main Stem Length (mm),91.513
+FcalT1M1,Branch 1 Length,NA
+FcalT1M1,Branch 2 Length,NA
+FcalT1M1,Branch 3 Length,NA
+FcalT1M1,Branch 4 Length,NA
+FcalT1M1,Branch 5 Length,NA
+FcalT1M1,Branch 6 Length,NA
+FcalT1M2,Main Stem Length (mm),105.794
+FcalT1M2,Branch 1 Length,NA
+FcalT1M2,Branch 2 Length,NA
+FcalT1M2,Branch 3 Length,NA
+FcalT1M2,Branch 4 Length,NA
+FcalT1M2,Branch 5 Length,NA
+FcalT1M2,Branch 6 Length,NA
+FcalT1M3,Main Stem Length (mm),146.959
+FcalT1M3,Branch 1 Length,71.567
+FcalT1M3,Branch 2 Length,38.604
+FcalT1M3,Branch 3 Length,NA
+FcalT1M3,Branch 4 Length,NA
+FcalT1M3,Branch 5 Length,NA
+FcalT1M3,Branch 6 Length,NA
+FfreT1M3,Main Stem Length (mm),207.571
+FfreT1M3,Branch 1 Length,NA
+FfreT1M3,Branch 2 Length,NA
+FfreT1M3,Branch 3 Length,NA
+FfreT1M3,Branch 4 Length,NA
+FfreT1M3,Branch 5 Length,NA
+FfreT1M3,Branch 6 Length,NA
+GcalT1M3,Main Stem Length (mm),166.414
+GcalT1M3,Branch 1 Length,NA
+GcalT1M3,Branch 2 Length,NA
+GcalT1M3,Branch 3 Length,NA
+GcalT1M3,Branch 4 Length,NA
+GcalT1M3,Branch 5 Length,NA
+GcalT1M3,Branch 6 Length,NA
+GcalT2M1,Main Stem Length (mm),161.583
+GcalT2M1,Branch 1 Length,NA
+GcalT2M1,Branch 2 Length,NA
+GcalT2M1,Branch 3 Length,NA
+GcalT2M1,Branch 4 Length,NA
+GcalT2M1,Branch 5 Length,NA
+GcalT2M1,Branch 6 Length,NA
+GfreT2M1,Main Stem Length (mm),134.236
+GfreT2M1,Branch 1 Length,NA
+GfreT2M1,Branch 2 Length,NA
+GfreT2M1,Branch 3 Length,NA
+GfreT2M1,Branch 4 Length,NA
+GfreT2M1,Branch 5 Length,NA
+GfreT2M1,Branch 6 Length,NA
+GfreT2M2,Main Stem Length (mm),176.463
+GfreT2M2,Branch 1 Length,NA
+GfreT2M2,Branch 2 Length,NA
+GfreT2M2,Branch 3 Length,NA
+GfreT2M2,Branch 4 Length,NA
+GfreT2M2,Branch 5 Length,NA
+GfreT2M2,Branch 6 Length,NA
+GglaT1M1,Main Stem Length (mm),213.997
+GglaT1M1,Branch 1 Length,33.055
+GglaT1M1,Branch 2 Length,NA
+GglaT1M1,Branch 3 Length,NA
+GglaT1M1,Branch 4 Length,NA
+GglaT1M1,Branch 5 Length,NA
+GglaT1M1,Branch 6 Length,NA
+GglaT2M3,Main Stem Length (mm),234.875
+GglaT2M3,Branch 1 Length,4.214
+GglaT2M3,Branch 2 Length,NA
+GglaT2M3,Branch 3 Length,NA
+GglaT2M3,Branch 4 Length,NA
+GglaT2M3,Branch 5 Length,NA
+GglaT2M3,Branch 6 Length,NA
+HcalT1M2,Main Stem Length (mm),74.052
+HcalT1M2,Branch 1 Length,NA
+HcalT1M2,Branch 2 Length,NA
+HcalT1M2,Branch 3 Length,NA
+HcalT1M2,Branch 4 Length,NA
+HcalT1M2,Branch 5 Length,NA
+HcalT1M2,Branch 6 Length,NA
+HcalT1M3,Main Stem Length (mm),110.297
+HcalT1M3,Branch 1 Length,NA
+HcalT1M3,Branch 2 Length,NA
+HcalT1M3,Branch 3 Length,NA
+HcalT1M3,Branch 4 Length,NA
+HcalT1M3,Branch 5 Length,NA
+HcalT1M3,Branch 6 Length,NA
+HcalT2M2,Main Stem Length (mm),131.018
+HcalT2M2,Branch 1 Length,NA
+HcalT2M2,Branch 2 Length,NA
+HcalT2M2,Branch 3 Length,NA
+HcalT2M2,Branch 4 Length,NA
+HcalT2M2,Branch 5 Length,NA
+HcalT2M2,Branch 6 Length,NA
+HfreT2M2,Main Stem Length (mm),158.063
+HfreT2M2,Branch 1 Length,NA
+HfreT2M2,Branch 2 Length,NA
+HfreT2M2,Branch 3 Length,NA
+HfreT2M2,Branch 4 Length,NA
+HfreT2M2,Branch 5 Length,NA
+HfreT2M2,Branch 6 Length,NA
+HglaT1M3,Main Stem Length (mm),177.282
+HglaT1M3,Branch 1 Length,97.215
+HglaT1M3,Branch 2 Length,NA
+HglaT1M3,Branch 3 Length,NA
+HglaT1M3,Branch 4 Length,NA
+HglaT1M3,Branch 5 Length,NA
+HglaT1M3,Branch 6 Length,NA
+HglaT2M2,Main Stem Length (mm),255.218
+HglaT2M2,Branch 1 Length,79.548
+HglaT2M2,Branch 2 Length,111.7
+HglaT2M2,Branch 3 Length,NA
+HglaT2M2,Branch 4 Length,NA
+HglaT2M2,Branch 5 Length,NA
+HglaT2M2,Branch 6 Length,NA
+IcalT1M2,Main Stem Length (mm),104.035
+IcalT1M2,Branch 1 Length,NA
+IcalT1M2,Branch 2 Length,NA
+IcalT1M2,Branch 3 Length,NA
+IcalT1M2,Branch 4 Length,NA
+IcalT1M2,Branch 5 Length,NA
+IcalT1M2,Branch 6 Length,NA
+IcalT2M2,Main Stem Length (mm),121.179
+IcalT2M2,Branch 1 Length,NA
+IcalT2M2,Branch 2 Length,NA
+IcalT2M2,Branch 3 Length,NA
+IcalT2M2,Branch 4 Length,NA
+IcalT2M2,Branch 5 Length,NA
+IcalT2M2,Branch 6 Length,NA
+IcalT2M3,Main Stem Length (mm),141.193
+IcalT2M3,Branch 1 Length,NA
+IcalT2M3,Branch 2 Length,NA
+IcalT2M3,Branch 3 Length,NA
+IcalT2M3,Branch 4 Length,NA
+IcalT2M3,Branch 5 Length,NA
+IcalT2M3,Branch 6 Length,NA
+IfreT1M1,Main Stem Length (mm),126.633
+IfreT1M1,Branch 1 Length,NA
+IfreT1M1,Branch 2 Length,NA
+IfreT1M1,Branch 3 Length,NA
+IfreT1M1,Branch 4 Length,NA
+IfreT1M1,Branch 5 Length,NA
+IfreT1M1,Branch 6 Length,NA
+IfreT1M2,Main Stem Length (mm),138.238
+IfreT1M2,Branch 1 Length,NA
+IfreT1M2,Branch 2 Length,NA
+IfreT1M2,Branch 3 Length,NA
+IfreT1M2,Branch 4 Length,NA
+IfreT1M2,Branch 5 Length,NA
+IfreT1M2,Branch 6 Length,NA
+IfreT2M3,Main Stem Length (mm),146.072
+IfreT2M3,Branch 1 Length,NA
+IfreT2M3,Branch 2 Length,NA
+IfreT2M3,Branch 3 Length,NA
+IfreT2M3,Branch 4 Length,NA
+IfreT2M3,Branch 5 Length,NA
+IfreT2M3,Branch 6 Length,NA
+IglaT1M1,Main Stem Length (mm),360.476
+IglaT1M1,Branch 1 Length,85.005
+IglaT1M1,Branch 2 Length,222.567
+IglaT1M1,Branch 3 Length,NA
+IglaT1M1,Branch 4 Length,NA
+IglaT1M1,Branch 5 Length,NA
+IglaT1M1,Branch 6 Length,NA
+IglaT1M2,Main Stem Length (mm),292.459
+IglaT1M2,Branch 1 Length,82.858
+IglaT1M2,Branch 2 Length,NA
+IglaT1M2,Branch 3 Length,NA
+IglaT1M2,Branch 4 Length,NA
+IglaT1M2,Branch 5 Length,NA
+IglaT1M2,Branch 6 Length,NA
+IglaT2M2,Main Stem Length (mm),180.315
+IglaT2M2,Branch 1 Length,42.755
+IglaT2M2,Branch 2 Length,NA
+IglaT2M2,Branch 3 Length,NA
+IglaT2M2,Branch 4 Length,NA
+IglaT2M2,Branch 5 Length,NA
+IglaT2M2,Branch 6 Length,NA
+JcalT1M1,Main Stem Length (mm),124.134
+JcalT1M1,Branch 1 Length,80.018
+JcalT1M1,Branch 2 Length,NA
+JcalT1M1,Branch 3 Length,NA
+JcalT1M1,Branch 4 Length,NA
+JcalT1M1,Branch 5 Length,NA
+JcalT1M1,Branch 6 Length,NA
+JcalT1M2,Main Stem Length (mm),158.196
+JcalT1M2,Branch 1 Length,48.936
+JcalT1M2,Branch 2 Length,NA
+JcalT1M2,Branch 3 Length,NA
+JcalT1M2,Branch 4 Length,NA
+JcalT1M2,Branch 5 Length,NA
+JcalT1M2,Branch 6 Length,NA
+JcalT2M1,Main Stem Length (mm),111.228
+JcalT2M1,Branch 1 Length,NA
+JcalT2M1,Branch 2 Length,NA
+JcalT2M1,Branch 3 Length,NA
+JcalT2M1,Branch 4 Length,NA
+JcalT2M1,Branch 5 Length,NA
+JcalT2M1,Branch 6 Length,NA
+JglaT1M1,Main Stem Length (mm),215.912
+JglaT1M1,Branch 1 Length,60.958
+JglaT1M1,Branch 2 Length,NA
+JglaT1M1,Branch 3 Length,NA
+JglaT1M1,Branch 4 Length,NA
+JglaT1M1,Branch 5 Length,NA
+JglaT1M1,Branch 6 Length,NA
