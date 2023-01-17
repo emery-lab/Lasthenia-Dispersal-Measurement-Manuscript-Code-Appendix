@@ -1,45 +1,60 @@
-#' # Field Study 2019 Jepson Prairie
-#' # Recovered Seed Proportions Part 2
-#' 
-#' ### Part 2/4: Model the disc tube counts and choose best predictive model using drop-one cross validation
-#' 
-#' Courtney Van Den Elzen
-#' 
-#' October 21st 2019 - Nov 22nd 2019
-#' 
-#' Libraries 
+#### 2019 Field Dispersal Data Analysis Extra 3: Predicting Proportions of Seed Recovered 2
 
+# Courtney Van Den Elzen
+
+# Initiated: October 2019
+# Latest Update: January 2023 (syntax update for Jan 2023 package version compatibility)
+
+# Description: Model the disc tube counts and choose best predictive model using
+#              drop-one cross validation
+
+
+### ------------------
+### Load Packages -----
 library(lmtest)
-#' Part 1 must be run first.
 
-#' #### Split by species for modeling
+### ------------------
+### Read In Combined Data (from Part 1) -----
+
+nseed_data_all_good <- 
+  read_csv("./Data/Field Study/Field Study Cleaned Data - 2018 and 2019 Neighbour Data Cleaned and Combined.csv") 
+
+nseed_data_all_good$Species
+
+### ------------------
+### Split Data by Species -----
+
+# Split by species for modeling
 nseed_data_all_good_cal <- dplyr::filter(nseed_data_all_good, Species == "cal")
 nseed_data_all_good_fre <- dplyr::filter(nseed_data_all_good, Species == "fre")
 nseed_data_all_good_gla <- dplyr::filter(nseed_data_all_good, Species == "gla")
 
-#' #### Modeling first pass
-#' Model the predictions of viable disc seed number (will not be modeling ray seeds b/c they don't disperse)
-#' 
-#' Poisson glm
+### ------------------
+### Data Modeling -------
+
+# Model the predictions of viable disc seed number (will not be modeling ray seeds b/c they don't disperse)
+
+## ------
+## Poisson GLM -------
+
 disc_poisson <- glm(Disc_tube_count ~ Species*Diameter*Year,
                         data = nseed_data_all_good,
                         family = "poisson")
 
-# *** previously did a likelihood ratio test to check whether adding year into the model increased predictive accuracy and it did.
-
-#' Negative binomial glm
+## ------
+## Negative Binomial GLM -------
 disc_nb <- glm.nb(Disc_tube_count ~ Species*Diameter*Year, data = nseed_data_all_good)
 
-# *** also did a LR test here. Same result.
 
-#' Gaussian lm
+## ------
+## Regular (Gaussian) LM -------
 disc_gauss <- lm(Disc_tube_count ~ Species*Diameter*Year, data = nseed_data_all_good)
-summary(disc_gauss)
 
-# *** also did a LR test here. Same result.
 
-#' #### Prediction Error Rate 
-#' Measuring prediction error rate between the two models - drop 1 cross validation
+### ------------------
+### Prediction Error Rate -------
+
+# Measuring prediction error rate between the two models - drop 1 cross validation
 
 # Number of observations total
 n_obs <- dim(nseed_data_all_good)[1]
@@ -105,16 +120,13 @@ pois_err <- sum((drop_obs - drop_pred.pois)^2)/n_obs
 nb_err <- sum((drop_obs - drop_pred.nb)^2)/n_obs
 gauss_err <- sum((drop_obs - drop_pred.gauss)^2)/n_obs
 
-#' Lowest score means lowest prediction error. Gaussian model works best here. 
-#Poisson glm model MSE for disc seeds
+
+# Poisson glm model MSE for disc seeds
 pois_err
 
-#Negative binomial glm model MSE for disc seeds
+# Negative binomial glm model MSE for disc seeds
 nb_err
 
-#Gaussian linear model MSE for disc seeds
+# Gaussian linear model MSE for disc seeds
 gauss_err
-
-
-#' For knitting to html: knitr::spin("/Users/Courtney/Documents/Thesis Chapter 1/Field Study/2019 Full Study Files/Scripts/Predicting Found Proportions 2.R")
 

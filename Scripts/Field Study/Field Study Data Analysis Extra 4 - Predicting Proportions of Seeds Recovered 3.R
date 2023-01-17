@@ -1,19 +1,22 @@
-#' # Field Study 2019 Jepson Prairie
-#' # Recovered Seed Proportions Part 3
-#' 
-#' ### Part 3/4: Use chosen predictive model to predict the number of viable seeds in each 2019 focal maternal plant
-#' 
-#' Courtney Van Den Elzen
-#' 
-#' October 21st 2019 - Nov 22nd 2019
-#' 
-#' Part 2 must be run first
-#' 
-#' Libraries
+#### 2019 Field Dispersal Data Analysis Extra 4: Predicting Proportions of Seed Recovered 3
+
+# Courtney Van Den Elzen
+
+# Initiated: October 2019
+# Latest Update: January 2023 (syntax update for Jan 2023 package version compatibility)
+
+# Description: Use chosen predictive model to predict the number of viable seeds 
+#              in each 2019 focal maternal plant
+
+
+### ------------------
+### Load Packages -----
+library(ciTools)
 library(foreach)
 library(doParallel)
 
-#' #### Custom functions
+### ------------------
+### Custom functions ----- 
 
 ## Bootstrap the prediction interval for the poisson glm
 boot_pi <- function(model, pdata, n, p) {
@@ -32,36 +35,56 @@ boot_pi <- function(model, pdata, n, p) {
   return(data.frame(pred = predict(model, newdata = pdata, type = "response"), lower = boot_ci[, 1], upper = boot_ci[, 2]))
 }
 
-#' #### Read in and tidy the data
-#'
-#' Read in the diameter data for the maternal plants
-mat_plants <- read_csv("/Users/Courtney/Documents/Thesis Chapter 1/Field Study/2019 Full Study Files/2019 Field Data Jepson Maternal Inflorescence Traits.csv")
 
-#' Tidy the data
-mat_plants_good <- mat_plants %>% filter(Omit_from_analysis == "no") %>% 
-  mutate(Species = case_when(Species == "L. californica" ~ "cal", 
+### ------------------
+### Read In Combined Data (from Part 1) -----
+
+# Read in the diameter data for the maternal plants
+mat_plants <- read_csv("./Data/Field Study/Field Study Raw Data - Maternal Inflorescences.csv")
+mat_plants$Species
+# Tidy the data
+mat_plants_good <- mat_plants %>%
+  dplyr::mutate(Species = case_when(Species == "L. californica" ~ "cal", 
                              Species == "L. fremontii" ~ "fre",
                              Species == "L. glaberrima" ~ "gla"),
-         Size = as.numeric(Size)) %>%
-  mutate(Inflor_ID = paste(Hub, Species,"T", Transect, "M", Mom, "I", Inflorescence, sep = ""),
-         Mat_ID = paste(Hub, Species,"T", Transect, "M", Mom, sep = ""),
-         Year = as.character("2019"))
+         Size_num = as.numeric(Size)) %>%
+  dplyr::mutate(Inflor_ID = paste(Hub, Species,"T", Transect, "M", Mom, "I", Inflorescence, sep = ""),
+         Mat_ID = paste(Hub, Species,"T", Transect, "M", Mom, sep = "")) %>%
+  dplyr::mutate(Year = 2019)
+mat_plants_good
+disc_poisson
 
-#' #### Predict maternal plant seed numbers using each of the fitted models
-#' 
-#' Create a dataframe of the predictor variables
-mat_diams_spp <- data.frame(Species = mat_plants_good$Species, Diameter = mat_plants_good$Size, Year = mat_plants_good$Year)
+### ------------------
+### Predict Seed Numbers -------
 
 head(mat_diams_spp)
 
-#' poisson model (load boot_pi function below)
+# Create a dataframe of the predictor variables
+mat_diams_spp <- data.frame(Species = mat_plants_good$Species, 
+                            Diameter = mat_plants_good$Size, 
+                            Year = mat_plants_good$Year) %>%
+  as_tibble() %>%
+  dplyr::mutate(Diameter = as.numeric(Diameter)) %>%
+  dplyr::filter(!is.na(Diameter))
+
+head(mat_diams_spp)
+
+## ------
+## Poisson GLM -------
 pois_pred_w_PI <- boot_pi(disc_poisson, mat_diams_spp, 1000, 0.95)
 
 head(pois_pred_w_PI)
 
-#' negative binomial model
+## ------
+## Negative Binomial GLM -------
+
 mat_disc_pred_nb <- predict(disc_nb, newdata = mat_diams_spp, type = "response")
-nb_pred_df <- data.frame(Disc_tube_count = mat_disc_pred_nb, Species = mat_diams_spp$Species, Diameter = mat_diams_spp$Diameter, Year = mat_diams_spp$Year)
+
+nb_pred_df <- data.frame(Disc_tube_count = mat_disc_pred_nb, 
+                         Species = mat_diams_spp$Species, 
+                         Diameter = mat_diams_spp$Diameter, 
+                         Year = mat_diams_spp$Year)
+
 nb_pred_w_PI <- ciTools::add_pi(nb_pred_df, disc_nb, names = c("lpb", "upb")) %>% mutate(Disc_tube_count = NULL, Species = NULL, Diameter = NULL, Year = NULL)
 
 head(nb_pred_w_PI)

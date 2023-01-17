@@ -21,8 +21,8 @@ library(doParallel) # to do things in parallel... not sure if this is actually u
 ### Read In 2018 (pilot study) Neighbor Data -----
 
 # Load data
-nseed_data_18 <- read.csv("/Users/Courtney/Documents/Thesis Chapter 2/Field Study/2018 Pilot Study Files/Field Kernel Data 2018 - Neighbour Data.csv", header = TRUE, na.strings="NA")
-
+nseed_data_18 <- read.csv("./Data/Field Study/Field Study Raw Data - 2018 Neighbour Data.csv", 
+                          header = TRUE, na.strings="NA") 
 
 ### ------------------
 ### Clean 2018 Neighbor Data -----
@@ -30,7 +30,7 @@ nseed_data_18 <- read.csv("/Users/Courtney/Documents/Thesis Chapter 2/Field Stud
 colnames(nseed_data_18)[1] <- "Hub"
 nseed_data_18$Mat_ID <- as.factor(paste(nseed_data_18$Hub, nseed_data_18$Number, nseed_data_18$Species, "t1", "m", nseed_data_18$Mom, sep = ""))
 nseed_data_18$Indiv_ID <- as.factor(paste(nseed_data_18$Mat_ID,"n", nseed_data_18$Neighbour, sep = ""))
-nseed_data_18
+
 
 # Create ID and year columns
 nseed_data_18$Year <- as.factor("2018")
@@ -54,20 +54,24 @@ colnames(nseed_data_18_1flr) <- c("Species", "Mat_ID", "Indiv_ID", "Year",
                                   "Disc_tube_count", "Ray_tube_count")
 
 
-nseed_data_18_1flr
-
 ### ------------------
 ### Read In 2019 (pilot study) Neighbor Data -----
 
 # Load the data 
-nseed_data_19 <- read.csv("/Users/Courtney/Documents/Thesis Chapter 2/Field Study/2019 Full Study Files/Data/2019 Field Data Jepson Neighbour Seed Counts.csv", header = TRUE, na.strings="NA")
+nseed_data_19 <- read.csv("./Data/Field Study/Field Study Raw Data - Neighbour Seed Counts.csv", 
+                          header = TRUE, na.strings="NA") %>%
+  dplyr::mutate(species = case_when(species == "L. californica" ~ "cal",
+                                    species == "L. fremontii" ~ "fre",
+                                    species == "L. glaberrima" ~ "gla"))
+nseed_data_19$X <- NULL
 
+nseed_data_19
 
 ### ------------------
 ### Clean 2019 Neighbor Data -----
 
 # rename columns & levels of species to match 2018 data
-colnames(nseed_data_19) <- c("Species", "Hub", "Transect", "Mom", "Neighbour", "Plant_ID", "Count_type", "Viable_Ray_Seed_Count", "Viable_Disc_Seed_Count", "Total_seeds", "Ray_tube_count", "Disc_tube_count", "Flowers_in_count", "Diameter", "Perfect_separation", "Notes", "Omit_from_analysis")
+colnames(nseed_data_19) <- c("Species", "Hub", "Transect", "Mom", "Neighbour", "Plant_ID", "Count_type", "Viable_Ray_Seed_Count", "Viable_Disc_Seed_Count", "Total_seeds", "Ray_tube_count", "Disc_tube_count", "Flowers_in_count", "Diameter", "Perfect_separation", "Notes")
 levels(nseed_data_19$Species) <- c("cal", "fre", "gla")
 
 # Make Year and ID columns
@@ -77,13 +81,11 @@ nseed_data_19$Year <- as.factor("2019")
 nseed_data_19$MID_Year <- as.factor(paste(nseed_data_19$Year, nseed_data_19$Mat_ID))
 nseed_data_19$IID_Year <- as.factor(paste(nseed_data_19$Year, nseed_data_19$Indiv_ID, sep = ""))
 
-
 # Filter to those individuals with diameter measurements
 nseed_data_19_diam <- 
   nseed_data_19 %>% 
   dplyr::filter(!is.na(Diameter)) %>% 
-  dplyr::filter(Perfect_separation == "Yes") %>% 
-  dplyr::filter(Omit_from_analysis == "No")
+  dplyr::filter(Perfect_separation == "Yes")
 
 # Subset to useful columns
 nseed_data_19_diam <- 
@@ -93,9 +95,7 @@ nseed_data_19_diam <-
 
 
 # Combine the 2018 and 2019 data and plot it
-
 nseed_data_all_good <- bind_rows(nseed_data_18_1flr, nseed_data_19_diam)
-
 
 # Make a column of seed totals
 nseed_data_all_good <- nseed_data_all_good %>% mutate(Total_count = Disc_tube_count + Ray_tube_count)
@@ -103,11 +103,12 @@ nseed_data_all_good <- nseed_data_all_good %>% mutate(Total_count = Disc_tube_co
 ### ------------------
 ### Plot the Data -----
 
+# boxplot of seed counts by MID year
 ggplot(nseed_data_all_good, aes(x = MID_Year, y = Disc_tube_count, colour = Species)) +
   geom_boxplot()
 
 
-#' Plot of the simple linear between the count of viable disc seeds and the inflorescence diameter
+# Plot of the simple linear between the count of viable disc seeds and the inflorescence diameter
 ggplot(nseed_data_all_good, aes(x=Diameter, y=Disc_tube_count, colour = Species)) +
   geom_jitter() +
   geom_smooth(method=lm, se=T)+
@@ -121,4 +122,6 @@ ggplot(nseed_data_all_good, aes(x=Diameter, y=Disc_tube_count, colour = Species)
 ### ------------------
 ### Write Combined 2018/2019 Data to File -----
 
-#write.csv(nseed_data_all_good, file = "/Users/Courtney/Documents/Thesis Chapter 2/Field Study/2019 Full Study Files/Neighbour Data Cleaned & Combined 2018 2019.csv")
+write_csv(nseed_data_all_good, file = "./Data/Field Study/Field Study Cleaned Data - 2018 and 2019 Neighbour Data Cleaned and Combined.csv")
+
+
