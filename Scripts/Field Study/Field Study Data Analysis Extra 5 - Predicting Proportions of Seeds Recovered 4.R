@@ -1,4 +1,4 @@
-#### 2019 Field Dispersal Data Analysis Extra 5: Predicting Proportions of Seed Recovered 4
+#### Field Dispersal Data Analysis Extra 5: Predicting Proportions of Seed Recovered 4
 
 # Courtney Van Den Elzen
 

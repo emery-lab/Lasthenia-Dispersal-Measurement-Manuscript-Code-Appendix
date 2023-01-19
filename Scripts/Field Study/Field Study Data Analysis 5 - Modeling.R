@@ -1,4 +1,4 @@
-#### 2019 Field Dispersal Data Analysis 5: Statistical Modeling of Combined Data
+#### Field Dispersal Data Analysis 5: Statistical Modeling of Combined Data
 
 # Courtney Van Den Elzen
 

@@ -1,4 +1,4 @@
-#### 2019 Field Dispersal Data Analysis 1: Cleaning maternal plant data
+#### Field Dispersal Data Analysis 1: Cleaning maternal plant data
 
 # Courtney Van Den Elzen
 
