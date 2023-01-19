@@ -41,19 +41,19 @@ nseed_data_all_good_gla <- dplyr::filter(nseed_data_all_good, Species == "gla")
 ## ------
 ## Poisson GLM -------
 
-disc_poisson <- glm(Disc_tube_count ~ Species*Diameter*Year,
+disc_poisson <- glm(Disc_tube_count ~ Species*Diameter,
                         data = nseed_data_all_good,
                         family = "poisson")
 
-
+summary(disc_poisson)
 ## ------
 ## Negative Binomial GLM -------
-disc_nb <- glm.nb(Disc_tube_count ~ Species*Diameter*Year, data = nseed_data_all_good)
+disc_nb <- glm.nb(Disc_tube_count ~ Species*Diameter, data = nseed_data_all_good)
 
 
 ## ------
 ## Regular (Gaussian) LM -------
-disc_gauss <- lm(Disc_tube_count ~ Species*Diameter*Year, data = nseed_data_all_good)
+disc_gauss <- lm(Disc_tube_count ~ Species*Diameter, data = nseed_data_all_good)
 
 
 ### ------------------
@@ -87,12 +87,12 @@ for (i in 1:n_obs){
     drop_set <- nseed_data_all_good[rand_drop,]
     
     #fit both model types (poisson and negative binomial)
-    disc_poisson <- glm(Disc_tube_count ~ Species*Diameter*Year, data = train_set, family = "poisson")
-    disc_nb <- glm.nb(Disc_tube_count ~ Species*Diameter*Year, data = train_set)
-    disc_gauss <- lm(Disc_tube_count ~ Species*Diameter*Year, data = train_set)
+    disc_poisson <- glm(Disc_tube_count ~ Species*Diameter, data = train_set, family = "poisson")
+    disc_nb <- glm.nb(Disc_tube_count ~ Species*Diameter, data = train_set)
+    disc_gauss <- lm(Disc_tube_count ~ Species*Diameter, data = train_set)
 
     #predict the dropped values and store them
-    dropdf <- data.frame(Species = drop_set$Species, Diameter = drop_set$Diameter, Year = drop_set$Year)
+    dropdf <- data.frame(Species = drop_set$Species, Diameter = drop_set$Diameter)
     drop_pred.pois[i,] <- predict(disc_poisson, dropdf, type = "response")
     drop_pred.nb[i,] <- predict(disc_nb, dropdf, type = "response")
     drop_pred.gauss[i,] <- predict(disc_gauss, dropdf, type = "response")
@@ -106,12 +106,12 @@ for (i in 1:n_obs){
     drop_set <- nseed_data_all_good[rand_drop,]
     
     #fit both model types (poisson and negative binomial)
-    disc_poisson <- glm(Disc_tube_count ~ Species*Diameter*Year, data = train_set, family = "poisson")
-    disc_nb <- glm.nb(Disc_tube_count ~ Species*Diameter*Year, data = train_set)
-    disc_gauss <- lm(Disc_tube_count ~ Species*Diameter*Year, data = train_set)
+    disc_poisson <- glm(Disc_tube_count ~ Species*Diameter, data = train_set, family = "poisson")
+    disc_nb <- glm.nb(Disc_tube_count ~ Species*Diameter, data = train_set)
+    disc_gauss <- lm(Disc_tube_count ~ Species*Diameter, data = train_set)
     
     #predict the dropped values and store them
-    dropdf <- data.frame(Species = drop_set$Species, Diameter = drop_set$Diameter, Year = drop_set$Year)
+    dropdf <- data.frame(Species = drop_set$Species, Diameter = drop_set$Diameter)
     drop_pred.pois[i,] <- predict(disc_poisson, dropdf, type = "response")
     drop_pred.nb[i,] <- predict(disc_nb, dropdf, type = "response")
     drop_pred.gauss[i,] <- predict(disc_gauss, dropdf, type = "response")
