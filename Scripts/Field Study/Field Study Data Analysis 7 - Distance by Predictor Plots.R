@@ -88,10 +88,6 @@ modsel_cfg_mean <- full_join(modsel_cal2, modsel_fre2) %>%
            mean_inflor_height_cm, var_inflor_height_cm) %>%
   dplyr::summarize(mean_dist = mean(Distance), mean_disp = mean(ptcentdist))
 
-### ------------------
-### Scatterplots -----
-
-
 ## ------
 ## Mean Inflorescence Height Plot -------
 

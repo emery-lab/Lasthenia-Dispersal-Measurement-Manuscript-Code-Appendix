@@ -8,12 +8,17 @@
 # Description: Use chosen predictive model to predict the number of viable seeds 
 #              in each 2019 focal maternal plant
 
+# WARNING: You must first run Field Study Data Analysis Extra 3 - Predicting 
+#          Proportions of Seed Recovered.R so the code has access to the models
+
 
 ### ------------------
 ### Load Packages -----
 library(ciTools)
 library(foreach)
 library(doParallel)
+library(tidyverse)
+library(lme4)
 
 ### ------------------
 ### Custom functions ----- 
@@ -41,7 +46,7 @@ boot_pi <- function(model, pdata, n, p) {
 
 # Read in the diameter data for the maternal plants
 mat_plants <- read_csv("./Data/Field Study/Field Study Raw Data - Maternal Inflorescences.csv")
-mat_plants$Species
+
 # Tidy the data
 mat_plants_good <- mat_plants %>%
   dplyr::mutate(Species = case_when(Species == "L. californica" ~ "cal", 
@@ -51,13 +56,10 @@ mat_plants_good <- mat_plants %>%
   dplyr::mutate(Inflor_ID = paste(Hub, Species,"T", Transect, "M", Mom, "I", Inflorescence, sep = ""),
          Mat_ID = paste(Hub, Species,"T", Transect, "M", Mom, sep = "")) %>%
   dplyr::mutate(Year = 2019)
-mat_plants_good
-disc_poisson
+
 
 ### ------------------
 ### Predict Seed Numbers -------
-
-head(mat_diams_spp)
 
 # Create a dataframe of the predictor variables
 mat_diams_spp <- data.frame(Species = mat_plants_good$Species, 
@@ -66,7 +68,6 @@ mat_diams_spp <- data.frame(Species = mat_plants_good$Species,
   as_tibble() %>%
   dplyr::mutate(Diameter = as.numeric(Diameter)) %>%
   dplyr::filter(!is.na(Diameter))
-
 head(mat_diams_spp)
 
 ## ------
@@ -85,14 +86,21 @@ nb_pred_df <- data.frame(Disc_tube_count = mat_disc_pred_nb,
                          Diameter = mat_diams_spp$Diameter, 
                          Year = mat_diams_spp$Year)
 
-nb_pred_w_PI <- ciTools::add_pi(nb_pred_df, disc_nb, names = c("lpb", "upb")) %>% mutate(Disc_tube_count = NULL, Species = NULL, Diameter = NULL, Year = NULL)
+nb_pred_w_PI <- ciTools::add_pi(nb_pred_df, 
+                                disc_nb, 
+                                names = c("lpb", "upb")) %>% 
+  dplyr::mutate(Disc_tube_count = NULL, Species = NULL, Diameter = NULL, Year = NULL)
 
 head(nb_pred_w_PI)
 
-#' gaussian model
+
+## ------
+## Negative Gaussian LM -------
+
 gauss_pred_w_PI <- predict(disc_gauss, newdata = mat_diams_spp, type = "response",  interval = "prediction")
 
 head(gauss_pred_w_PI)
+
 
 #' Moving forward with the poisson model since it had lower prediction error than the nb model. 
 #' The gaussian model had the lowest MSE but it also has prediction intervals that include negative values so 

@@ -21,8 +21,7 @@ library(doParallel) # to do things in parallel... not sure if this is actually u
 ### Read In 2018 (pilot study) Neighbor Data -----
 
 # Load data
-nseed_data_18 <- read.csv("./Data/Field Study/Field Study Raw Data - 2018 Neighbour Data.csv", 
-                          header = TRUE, na.strings="NA") 
+nseed_data_18 <- read_csv("./Data/Field Study/Field Study Raw Data - 2018 Neighbour Data.csv") 
 
 ### ------------------
 ### Clean 2018 Neighbor Data -----
@@ -58,21 +57,24 @@ colnames(nseed_data_18_1flr) <- c("Species", "Mat_ID", "Indiv_ID", "Year",
 ### Read In 2019 (pilot study) Neighbor Data -----
 
 # Load the data 
-nseed_data_19 <- read.csv("./Data/Field Study/Field Study Raw Data - Neighbour Seed Counts.csv", 
-                          header = TRUE, na.strings="NA") %>%
+nseed_data_19 <- read_csv("./Data/Field Study/Field Study Raw Data - Neighbour Seed Counts.csv") %>%
   dplyr::mutate(species = case_when(species == "L. californica" ~ "cal",
                                     species == "L. fremontii" ~ "fre",
                                     species == "L. glaberrima" ~ "gla"))
-nseed_data_19$X <- NULL
 
-nseed_data_19
+colnames(nseed_data_19)
+
 
 ### ------------------
 ### Clean 2019 Neighbor Data -----
 
 # rename columns & levels of species to match 2018 data
-colnames(nseed_data_19) <- c("Species", "Hub", "Transect", "Mom", "Neighbour", "Plant_ID", "Count_type", "Viable_Ray_Seed_Count", "Viable_Disc_Seed_Count", "Total_seeds", "Ray_tube_count", "Disc_tube_count", "Flowers_in_count", "Diameter", "Perfect_separation", "Notes")
-levels(nseed_data_19$Species) <- c("cal", "fre", "gla")
+
+colnames(nseed_data_19) <- c("Species", "Hub", "Transect", "Mom", "Neighbour", "Plant_ID", "Count_type", 
+  "Viable_Ray_Seed_Count", "Viable_Disc_Seed_Count", "Total_seeds", "Ray_tube_count", 
+  "Disc_tube_count", "Flowers_in_count", "Diameter", "Perfect_separation", "Notes")
+
+nseed_data_19
 
 # Make Year and ID columns
 nseed_data_19$Mat_ID <- as.factor(paste(nseed_data_19$Hub, 1, nseed_data_19$Species, "t", nseed_data_19$Transect, "m", nseed_data_19$Mom, sep = ""))
@@ -81,11 +83,15 @@ nseed_data_19$Year <- as.factor("2019")
 nseed_data_19$MID_Year <- as.factor(paste(nseed_data_19$Year, nseed_data_19$Mat_ID))
 nseed_data_19$IID_Year <- as.factor(paste(nseed_data_19$Year, nseed_data_19$Indiv_ID, sep = ""))
 
+
+
 # Filter to those individuals with diameter measurements
 nseed_data_19_diam <- 
   nseed_data_19 %>% 
   dplyr::filter(!is.na(Diameter)) %>% 
   dplyr::filter(Perfect_separation == "Yes")
+
+nseed_data_19_diam
 
 # Subset to useful columns
 nseed_data_19_diam <- 
@@ -98,7 +104,9 @@ nseed_data_19_diam <-
 nseed_data_all_good <- bind_rows(nseed_data_18_1flr, nseed_data_19_diam)
 
 # Make a column of seed totals
-nseed_data_all_good <- nseed_data_all_good %>% mutate(Total_count = Disc_tube_count + Ray_tube_count)
+nseed_data_all_good <- 
+  nseed_data_all_good %>% 
+  dplyr::mutate(Total_count = Disc_tube_count + Ray_tube_count)
 
 ### ------------------
 ### Plot the Data -----

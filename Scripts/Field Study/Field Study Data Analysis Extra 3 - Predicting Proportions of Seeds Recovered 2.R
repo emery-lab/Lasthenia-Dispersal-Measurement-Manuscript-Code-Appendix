@@ -12,14 +12,18 @@
 ### ------------------
 ### Load Packages -----
 library(lmtest)
+library(tidyverse)
+library(lme4)
+library(MASS) # extra stats stuff
+library(doParallel)
 
 ### ------------------
 ### Read In Combined Data (from Part 1) -----
 
 nseed_data_all_good <- 
-  read_csv("./Data/Field Study/Field Study Cleaned Data - 2018 and 2019 Neighbour Data Cleaned and Combined.csv") 
+  read_csv("./Data/Field Study/Field Study Cleaned Data - 2018 and 2019 Neighbour Data Cleaned and Combined.csv")
 
-nseed_data_all_good$Species
+nseed_data_all_good
 
 ### ------------------
 ### Split Data by Species -----
@@ -40,6 +44,7 @@ nseed_data_all_good_gla <- dplyr::filter(nseed_data_all_good, Species == "gla")
 disc_poisson <- glm(Disc_tube_count ~ Species*Diameter*Year,
                         data = nseed_data_all_good,
                         family = "poisson")
+
 
 ## ------
 ## Negative Binomial GLM -------
