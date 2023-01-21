@@ -22,7 +22,7 @@ library(rsalad)
 
 # Import metadata and seed data
 metad <- read.csv("./Data/Drop Tube Study/Drop Tube Raw Data - Meta Data.csv")
-massd <- read.csv("./Data/Drop Tube Study/Drop Tube Raw Data - Seed Data.csv")
+massd <- read.csv("./Data/Drop Tube Study/Drop Tube Raw Data - Seed Mass.csv")
 
 ### ------------------
 ### Clean Data -------
