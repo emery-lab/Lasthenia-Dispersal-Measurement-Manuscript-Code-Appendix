@@ -31,7 +31,7 @@ library(effects)
 library(viridis)
 library(patchwork)
 
-# Data cuts from Part 2
+# Data from Part 2
 dist_traits_cal
 dist_traits_fre
 dist_traits_gla
@@ -112,8 +112,8 @@ dist_traits_gla2$Species.x <- dplyr::recode(dist_traits_gla2$Species.x, `L. glab
 dist_traits_cfg <- full_join(dist_traits_cal2, dist_traits_fre2) %>% full_join(dist_traits_gla2) 
 
 
-## ------------------
-## Create Plots  -------
+### ------------------
+### Create Plots  -------
 
 ## ------------------
 ## Seed mass (sm) Plot  -------
@@ -144,7 +144,7 @@ pcnt_eff_sm_gla
 
 # to get to these "effects" must use mu[distance] = exp(RHS of model)
 
-#' Add the species ID as a column
+# Add the species ID as a column
 sm_effect_cal$Species.x <- "cal"
 sm_effect_fre$Species.x <- "fre"
 sm_effect_gla$Species.x <- "gla"
